@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <p className='text-red-500'>
+        <p className='text-[#FFF]'>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos,
           earum ullam nisi veritatis, sunt nam consequatur atque tempore quia
           perferendis tempora odio facilis, deleniti similique eos inventore
