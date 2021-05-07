@@ -2,19 +2,14 @@ import Head from 'next/head'
 
 export default function Home() {
   return (
-    <div>
+    <div className='text-[#202046] text-[32px]'>
       <Head>
-        <title>Create Next App</title>
+        <title>Bootcamp Testimonials Slider</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main>
-        <p className='text-[#FFF]'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos,
-          earum ullam nisi veritatis, sunt nam consequatur atque tempore quia
-          perferendis tempora odio facilis, deleniti similique eos inventore
-          nostrum iure! Hic!
-        </p>
+        <h2>“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”</h2>
       </main>
     </div>
   )
