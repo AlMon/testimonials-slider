@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import SliderController from '../components/SliderController'
 import { SliderData } from '../services/SliderData'
 
 export default function Home() {
@@ -19,7 +18,7 @@ export default function Home() {
   }
 
   return (
-    <div className='text-[#202046] text-[32px]'>
+    <div className='text-[#202046] text-[32px] relative w-full overflow-hidden'>
       <Head>
         <title>Bootcamp Testimonials Slider</title>
         <link rel='icon' href='/favicon.png' />
@@ -28,7 +27,7 @@ export default function Home() {
       <img
         src='/pattern-quotes.svg'
         alt='Pattern Quotes'
-        className='absolute top-52 left-[265px] z-0'
+        className='absolute lg:top-[12.5rem] lg:left-[265px] top-[47.5%] left-1/3 transform scale-50 lg:scale-100 z-0'
       />
       <img
         src='/pattern-curve.svg'
@@ -38,19 +37,26 @@ export default function Home() {
       <img
         src='/pattern-bg.svg'
         alt='Pattern Curve'
-        className='absolute bottom-20 right-10 z-0'
+        className='absolute lg:bottom-20 lg:right-10 transform z-0 lg:scale-100 scale-90'
       />
 
-      <main className='min-h-screen container mx-auto flex items-center'>
+      <main className='min-h-screen container mx-auto flex lg:items-center'>
         {SliderData.map(({ image, quote, name, title }, index) => (
           <div key={index}>
             {index === current && (
-              <div className='grid grid-cols-2'>
-                <div className='mt-36 -mr-28 z-20 pl-28'>
-                  <h2 className='font-light leading-[43px]'>{quote}</h2>
-                  <p className='text-[20px] mt-7 font-bold'>
+              <div className='grid lg:grid-cols-2 grid-cols-1 lg:text-left text-center'>
+                <img
+                  src={image}
+                  alt={name}
+                  className='shadow-lg mx-auto z-10 lg:hidden my-10 max-w-[70%] lg:max-w-full'
+                />
+                <div className='lg:-mr-28 z-20 lg:pl-28'>
+                  <h2 className='font-light lg:leading-[43px] lg:text-[32px] text-lg leading-6 px-8 lg:px-0 lg:mt-0 mt-10'>
+                    {quote}
+                  </h2>
+                  <p className='lg:text-[20px] mt-7 font-bold text-[15px]'>
                     {name}{' '}
-                    <span className='text-[#babacf] ml-1 font-medium'>
+                    <span className='text-[#babacf] ml-1 font-medium block lg:inline'>
                       {title}
                     </span>
                   </p>
@@ -58,44 +64,46 @@ export default function Home() {
                 <img
                   src={image}
                   alt={name}
-                  className='shadow-2xl mx-auto z-10'
+                  className='shadow-2xl mx-auto z-10 absolute right-44 bottom-32 hidden lg:block'
                 />
               </div>
             )}
           </div>
         ))}
         {/* <SliderController /> */}
-        <div className='bg-white flex w-[110px] h-[60px] justify-between items-center px-[15px] rounded-full shadow-xl absolute z-20 right-[475px] bottom-24'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='h-6 w-6 cursor-pointer'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='#8585AC'
-            onClick={prevSlide}
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={3}
-              d='M15 19l-7-7 7-7'
-            />
-          </svg>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='h-6 w-6 cursor-pointer'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='#8585AC'
-            onClick={nextSlide}
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={3}
-              d='M9 5l7 7-7 7'
-            />
-          </svg>
+        <div className='scale-75 transform lg:scale-100 bg-white flex w-[110px] h-[60px] justify-between items-center px-[15px] rounded-full shadow-xl absolute z-20 lg:right-[475px] lg:bottom-24 right-1/3 top-[17rem] lg:top-auto'>
+          <button onClick={prevSlide}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-6 w-6 cursor-pointer'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='#8585AC'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={3}
+                d='M15 19l-7-7 7-7'
+              />
+            </svg>
+          </button>
+          <button onClick={nextSlide}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-6 w-6 cursor-pointer'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='#8585AC'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={3}
+                d='M9 5l7 7-7 7'
+              />
+            </svg>
+          </button>
         </div>
       </main>
     </div>

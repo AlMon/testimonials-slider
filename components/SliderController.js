@@ -7,6 +7,7 @@ function SliderController() {
         fill='none'
         viewBox='0 0 24 24'
         stroke='#8585AC'
+        onClick={prevSlide}
       >
         <path
           strokeLinecap='round'
@@ -21,6 +22,7 @@ function SliderController() {
         fill='none'
         viewBox='0 0 24 24'
         stroke='#8585AC'
+        onClick={nextSlide}
       >
         <path
           strokeLinecap='round'
