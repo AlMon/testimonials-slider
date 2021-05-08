@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import SliderController from './components/SliderController'
+import SliderController from '../components/SliderController'
 
 export default function Home() {
   return (
