@@ -72,7 +72,7 @@ export default function Home() {
         ))}
         {/* <SliderController /> */}
         <div className='scale-75 transform lg:scale-100 bg-white flex w-[110px] h-[60px] justify-between items-center px-[15px] rounded-full shadow-xl absolute z-20 lg:right-[475px] lg:bottom-24 right-1/3 top-[17rem] lg:top-auto'>
-          <button onClick={prevSlide}>
+          <button onClick={prevSlide} name='previous-slide'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-6 w-6 cursor-pointer'
@@ -88,7 +88,7 @@ export default function Home() {
               />
             </svg>
           </button>
-          <button onClick={nextSlide}>
+          <button onClick={nextSlide} name='next-slide'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-6 w-6 cursor-pointer'
